@@ -5,11 +5,11 @@ from sqlalchemy.sql import func
 class Board(Base):
     __tablename__ = "board"
 
-    seq = Column(Integer, primary_key=True, index=True)  
-    journal_id = Column(String(10))  
-    title = Column(String(200))  
-    publish_date = Column(String(20))  
-    link_url = Column(String(200))  
-    writer = Column(String(50))  
-    content = Column(TEXT)  
-    reg_date = Column(DATETIME(timezone=True), default=func.now()) 
+    board_no = Column(Integer, primary_key=True, index=True)  
+    title = Column(String(200))
+    contents = Column(TEXT)
+    writer = Column(String(50))
+    view_count = Column(Integer)
+    link_url = Column(String(200))
+    create_date = Column(DATETIME(timezone=True), default=func.now())
+    update_date = Column(DATETIME(timezone=True), default=func.now())

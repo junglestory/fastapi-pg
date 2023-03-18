@@ -14,7 +14,7 @@ password = os.environ.get('password')
 db = os.environ.get('db')
 dbtype = os.environ.get('dbtype')
 
-SQLALCHEMY_DATABASE_URL = f"{dbtype}://{user}:{password}@{host}:{port}/{db}"
+SQLALCHEMY_DATABASE_URL = f"{dbtype}://{user}:{password }@{host}:{port}/{db}"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
