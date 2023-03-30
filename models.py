@@ -11,5 +11,5 @@ class Board(Base):
     writer = Column(String(50))
     view_count = Column(Integer)
     link_url = Column(String(200))
-    create_date = Column(DATETIME(timezone=True), default=func.now())
-    update_date = Column(DATETIME(timezone=True), default=func.now())
+    create_date = Column(DATETIME(timezone=True), server_default=func.now())
+    update_date = Column(DATETIME(timezone=True), server_default=func.now())
